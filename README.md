@@ -57,8 +57,8 @@ The SQLite database with initial data is already included
 
 5. **Superuser Credentials**
 #already created
-username:admin
-password:admin
+-username:admin
+-password:admin
 
 
 6. **Run server**
