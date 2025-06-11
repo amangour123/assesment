@@ -1,0 +1,697 @@
+{
+	"info": {
+		"_postman_id": "009a301f-03be-4ef7-8f40-9e82586e1453",
+		"name": "task management system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45781481",
+		"_collection_link": "https://amangour-65796.postman.co/workspace/Aman-Gour's-Workspace~e897b74c-c56f-430d-8481-514c6ea645e6/collection/45781481-009a301f-03be-4ef7-8f40-9e82586e1453?action=share&source=collection_link&creator=45781481"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"mhorne\",  //admin role\r\n    \"password\":\"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"mhorne\",  //admin role\r\n    \"password\":\"password123\"\r\n\r\n\r\n\r\n    // \"username\":\"rholmes\",  //user role\r\n    // \"password\":\"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/token/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 10 Jun 2025 19:41:59 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "486"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0OTY3MDkxOSwiaWF0IjoxNzQ5NTg0NTE5LCJqdGkiOiJhYWQzNWFlYTQyZDc0ODEzYWYzODdlMzdiMzhkOWE2MiIsInVzZXJfaWQiOjIwfQ.JOTw1KY5DK2XvmxDjkUn3Vp7VOd6li5TDJv7xc2ln1k\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTg0ODE5LCJpYXQiOjE3NDk1ODQ1MTksImp0aSI6ImQ0OGNlZjliYTEwODQzY2NhZDhkMTFkNmMxNTU4NmVhIiwidXNlcl9pZCI6MjB9.S1Jt0P2nonhMw98Sctt-1RTdiYFto5jy374PUzfYFrk\"\n}"
+				}
+			]
+		},
+		{
+			"name": "list task",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTgyNzk2LCJpYXQiOjE3NDk1ODI0OTYsImp0aSI6ImJiMTU2YTkxNTYzYTRiMTRhMjA0ZjQwNzVhNTJjNWRkIiwidXNlcl9pZCI6MjB9._WMKG7iYJsManof35t3QS-RFtwhZ9kWVSVBjKjkdZEI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"mhorne\",\r\n    \"password\":\"password123\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/task/tasks/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"task",
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "list task",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"mhorne\",\r\n    \"password\":\"password123\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/task/tasks/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"task",
+								"tasks",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 10 Jun 2025 19:09:31 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20522"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"182b40f8-086d-4873-add9-c018fc95ada7\",\n        \"title\": \"Identify risk poor.\",\n        \"description\": \"Pull any word another. Deep out certain. Coach issue indeed.\\nCapital remain meet art probably ever mention. Pressure general meeting son our ask. Management article sport off early.\",\n        \"deadline\": \"2025-06-11T14:39:13.776576Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 13,\n        \"assigned_to_username\": \"sharonvargas\",\n        \"created_at\": \"2025-06-10T14:39:13.777357Z\"\n    },\n    {\n        \"id\": \"885a0b07-c8ab-4139-b483-70295a6c9edf\",\n        \"title\": \"Where benefit so get month machine.\",\n        \"description\": \"Political indicate at seven speech simple. Upon person product possible federal as. On always million clearly girl.\\nWind on group throw major space financial. Modern education score office.\",\n        \"deadline\": \"2025-06-13T14:39:13.786735Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 2,\n        \"assigned_to_username\": \"tschmidt\",\n        \"created_at\": \"2025-06-10T14:39:13.787239Z\"\n    },\n    {\n        \"id\": \"11aa0a4d-2ae0-4eec-9749-8c5e912f9efe\",\n        \"title\": \"Similar sport inside six cup.\",\n        \"description\": \"Produce child face population sometimes conference two. Blood country social force always coach radio. Cold throw those evidence.\",\n        \"deadline\": \"2025-06-11T14:39:13.796388Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 14,\n        \"assigned_to_username\": \"fletchertimothy\",\n        \"created_at\": \"2025-06-10T14:39:13.797027Z\"\n    },\n    {\n        \"id\": \"579356e0-ea91-49b0-b028-a9bccf264416\",\n        \"title\": \"Tv character quality state attorney couple.\",\n        \"description\": \"Life authority sense group most. Difference magazine maybe lead. Call chance certainly book along daughter maybe. Everyone myself move.\",\n        \"deadline\": \"2025-06-19T14:39:13.807762Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 6,\n        \"assigned_to_username\": \"riveraandre\",\n        \"created_at\": \"2025-06-10T14:39:13.809480Z\"\n    },\n    {\n        \"id\": \"0c3b7174-a30e-4cff-aa6f-698fcc8950de\",\n        \"title\": \"Reflect memory international shake.\",\n        \"description\": \"Wind certainly senior system coach up. Bring buy kind condition throughout. Bring unit bag simple certain north.\\nThem energy total anything subject sister. As party summer early very would fact.\",\n        \"deadline\": \"2025-06-15T14:39:13.838963Z\",\n        \"status\": \"pending\",\n        \"assigned_to\": 21,\n        \"assigned_to_username\": \"carriemendoza\",\n        \"created_at\": \"2025-06-10T14:39:13.839612Z\"\n    },\n    {\n        \"id\": \"2d5752bc-0d16-40c8-b7f6-6f8863f7205f\",\n        \"title\": \"Though cultural mouth.\",\n        \"description\": \"Phone administration huge. Foot people month week spend level imagine. Personal when box my page look far consumer.\\nIncluding marriage miss. Admit action tax politics town.\",\n        \"deadline\": \"2025-06-07T14:39:13.849636Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 16,\n        \"assigned_to_username\": \"kscott\",\n        \"created_at\": \"2025-06-10T14:39:13.850552Z\"\n    },\n    {\n        \"id\": \"59bdfebb-b500-4181-914c-07df1b3746ae\",\n        \"title\": \"Likely deal site drive.\",\n        \"description\": \"Rich plan something. Important allow nature anyone.\\nPerhaps end cup theory last part partner security. Imagine young sport Republican office might whatever.\",\n        \"deadline\": \"2025-06-06T14:39:13.860493Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 21,\n        \"assigned_to_username\": \"carriemendoza\",\n        \"created_at\": \"2025-06-10T14:39:13.861255Z\"\n    },\n    {\n        \"id\": \"5b302e99-8c3e-48fa-bed7-cdf8d07ba2cf\",\n        \"title\": \"Possible camera truth lay far.\",\n        \"description\": \"Herself including standard admit thank. Number speech meeting move media model unit debate.\\nDoctor respond alone above small several. Lose road future floor this kind likely.\",\n        \"deadline\": \"2025-06-17T14:39:13.871977Z\",\n        \"status\": \"pending\",\n        \"assigned_to\": 13,\n        \"assigned_to_username\": \"sharonvargas\",\n        \"created_at\": \"2025-06-10T14:39:13.873994Z\"\n    },\n    {\n        \"id\": \"25e939dd-11e4-4cd7-b511-725216edddee\",\n        \"title\": \"Front international school.\",\n        \"description\": \"Level partner must budget girl practice. Course lay price.\\nAway turn car.\\nCareer computer call. Deal wait lead myself see girl. Cold share writer cut threat event cover. Yard third see sit food.\",\n        \"deadline\": \"2025-06-08T14:39:13.884150Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 6,\n        \"assigned_to_username\": \"riveraandre\",\n        \"created_at\": \"2025-06-10T14:39:13.885014Z\"\n    },\n    {\n        \"id\": \"58e45dff-bbdf-4b38-9a59-5f9952dc52d3\",\n        \"title\": \"Red nor involve.\",\n        \"description\": \"Teach good full price exactly board space doctor. Play our effort authority build both show. Policy other cold station.\\nSize young challenge idea church. Southern fast audience speech bit.\",\n        \"deadline\": \"2025-06-13T14:39:13.894345Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 13,\n        \"assigned_to_username\": \"sharonvargas\",\n        \"created_at\": \"2025-06-10T14:39:13.895325Z\"\n    },\n    {\n        \"id\": \"a47fa6bb-dc86-4273-9dc8-5f9d9667f3bf\",\n        \"title\": \"Ok final protect everyone benefit group.\",\n        \"description\": \"Fall page question president society and. Same mind prepare south benefit. Message accept size room perhaps.\",\n        \"deadline\": \"2025-06-10T14:39:13.904654Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 4,\n        \"assigned_to_username\": \"stewartaaron\",\n        \"created_at\": \"2025-06-10T14:39:13.905134Z\"\n    },\n    {\n        \"id\": \"782135dc-5219-4976-9a96-087f01f4d66f\",\n        \"title\": \"Attack often matter mouth.\",\n        \"description\": \"Why ability popular feel. Suffer skill religious resource time. Help network book result stuff operation cost.\\nSmall side take difficult.\",\n        \"deadline\": \"2025-06-08T14:39:13.915354Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 4,\n        \"assigned_to_username\": \"stewartaaron\",\n        \"created_at\": \"2025-06-10T14:39:13.916208Z\"\n    },\n    {\n        \"id\": \"65796691-0d88-4eb5-afda-c05a139f650e\",\n        \"title\": \"Daughter protect north try.\",\n        \"description\": \"Approach when role order major according pass. Garden once picture ball. Month drug including.\\nEasy scientist such degree choice end human north.\",\n        \"deadline\": \"2025-06-08T14:39:13.927495Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 7,\n        \"assigned_to_username\": \"kstephens\",\n        \"created_at\": \"2025-06-10T14:39:13.928426Z\"\n    },\n    {\n        \"id\": \"304502a2-5b34-47c2-a330-b305c599e9a3\",\n        \"title\": \"Radio remain talk one.\",\n        \"description\": \"Describe task these and wind too material. Word side win. Sea activity black tend hotel doctor attention.\\nAhead through avoid. Over bag think. Exist perform business dog in certain.\",\n        \"deadline\": \"2025-06-06T14:39:13.938009Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 1,\n        \"assigned_to_username\": \"admin\",\n        \"created_at\": \"2025-06-10T14:39:13.938639Z\"\n    },\n    {\n        \"id\": \"052b819d-d1b1-4342-b1ad-ef0331b82772\",\n        \"title\": \"Responsibility wonder tree policy family notice.\",\n        \"description\": \"Fire cut different already before. Wide century who. Federal must hit protect camera throughout.\",\n        \"deadline\": \"2025-06-20T14:39:13.950497Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 6,\n        \"assigned_to_username\": \"riveraandre\",\n        \"created_at\": \"2025-06-10T14:39:13.951223Z\"\n    },\n    {\n        \"id\": \"2b90f645-1bb5-46b0-bfd9-c39e0a718524\",\n        \"title\": \"Through newspaper people president.\",\n        \"description\": \"Rather hard life answer must even. Piece election guess business interview necessary.\\nBelieve memory item condition protect machine cultural. Hospital teach others garden movement.\",\n        \"deadline\": \"2025-06-12T14:39:13.961804Z\",\n        \"status\": \"pending\",\n        \"assigned_to\": 8,\n        \"assigned_to_username\": \"evelyn95\",\n        \"created_at\": \"2025-06-10T14:39:13.962878Z\"\n    },\n    {\n        \"id\": \"9b886c66-1f45-4bbe-b69e-b138e518c4b0\",\n        \"title\": \"Score himself whom during.\",\n        \"description\": \"International article down word foot face.\\nRecognize include tree save increase. The skill everything son hair.\",\n        \"deadline\": \"2025-06-15T14:39:13.972413Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 20,\n        \"assigned_to_username\": \"mhorne\",\n        \"created_at\": \"2025-06-10T14:39:13.972925Z\"\n    },\n    {\n        \"id\": \"2114c31b-c7a8-4ea8-9a54-f46f6b945c02\",\n        \"title\": \"Of page play car section traditional.\",\n        \"description\": \"Today go yourself when responsibility less serve. People ground range tell. Between city crime how method today to.\\nRecently team former friend member keep. Person million everything ten four.\",\n        \"deadline\": \"2025-06-16T14:39:13.983982Z\",\n        \"status\": \"in_progress\",\n        \"assigned_to\": 17,\n        \"assigned_to_username\": \"moorejames\",\n        \"created_at\": \"2025-06-10T14:39:13.984518Z\"\n    },\n    {\n        \"id\": \"ea0fcab5-1b42-4716-b081-9f9229db5557\",\n        \"title\": \"Call husband court.\",\n        \"description\": \"Perform scene theory bar detail. Nature process it physical Mr. Beautiful stand maybe without campaign.\\nFood around why onto pick interesting behind. Life collection grow travel include still.\",\n        \"deadline\": \"2025-06-11T14:39:14.031599Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 3,\n        \"assigned_to_username\": \"jessicaphillips\",\n        \"created_at\": \"2025-06-10T14:39:14.032217Z\"\n    },\n    {\n        \"id\": \"bed58171-d722-4dbf-8241-10dc50d57f73\",\n        \"title\": \"Environmental spring act middle.\",\n        \"description\": \"Issue property law seven. Enjoy term land or business. Save plan price degree.\\nOnce sister involve contain our off smile. International college why interesting star politics near.\",\n        \"deadline\": \"2025-06-20T14:39:14.042496Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 10,\n        \"assigned_to_username\": \"robertoliver\",\n        \"created_at\": \"2025-06-10T14:39:14.043348Z\"\n    },\n    {\n        \"id\": \"946a8550-c886-4fdc-acc8-0395a32a2169\",\n        \"title\": \"Daughter speak last.\",\n        \"description\": \"Democratic drop soldier north court color task. Determine difficult moment weight much ability. Increase cost actually local long. Often many soldier mind peace financial few.\",\n        \"deadline\": \"2025-06-08T14:39:14.053205Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 6,\n        \"assigned_to_username\": \"riveraandre\",\n        \"created_at\": \"2025-06-10T14:39:14.053857Z\"\n    },\n    {\n        \"id\": \"a8a4d21c-6a59-417d-ba36-0323bb040116\",\n        \"title\": \"Field memory want rate.\",\n        \"description\": \"Yes movie whether ready their hope.\\nSide our hour option executive. Single fight short option.\\nSection ability worker standard. Station amount believe middle. Eight hand material your hit spring it.\",\n        \"deadline\": \"2025-06-20T14:39:14.063125Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 6,\n        \"assigned_to_username\": \"riveraandre\",\n        \"created_at\": \"2025-06-10T14:39:14.063734Z\"\n    },\n    {\n        \"id\": \"bd46d3fa-5b0f-4040-b2de-4ef15a628319\",\n        \"title\": \"Along month my anything place if.\",\n        \"description\": \"Military pay fine maybe your painting. Information huge ahead city message accept should.\",\n        \"deadline\": \"2025-06-09T14:39:14.074746Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 21,\n        \"assigned_to_username\": \"carriemendoza\",\n        \"created_at\": \"2025-06-10T14:39:14.075832Z\"\n    },\n    {\n        \"id\": \"223241d5-0a90-4c8a-a162-651166a048cf\",\n        \"title\": \"Pattern stock receive tell.\",\n        \"description\": \"Meeting name another field local. Meet behind big property even. Strong recognize affect star exactly sense. Fall force test him.\",\n        \"deadline\": \"2025-06-08T14:39:14.085816Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 9,\n        \"assigned_to_username\": \"blakejeremy\",\n        \"created_at\": \"2025-06-10T14:39:14.086515Z\"\n    },\n    {\n        \"id\": \"2fb4d65c-679e-4d36-a583-23669a31fecb\",\n        \"title\": \"Five great school day would.\",\n        \"description\": \"Drug do capital hotel enter. Anyone government send job feeling and treat shake.\",\n        \"deadline\": \"2025-06-13T14:39:14.096087Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 14,\n        \"assigned_to_username\": \"fletchertimothy\",\n        \"created_at\": \"2025-06-10T14:39:14.096634Z\"\n    },\n    {\n        \"id\": \"0e719170-aaed-4d21-8b91-24c452e61221\",\n        \"title\": \"Parent never role school Mrs deep.\",\n        \"description\": \"Place throw since course rule war system. Still word smile key difference. With sure product campaign power.\",\n        \"deadline\": \"2025-06-16T14:39:14.108989Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 19,\n        \"assigned_to_username\": \"stephaniebeck\",\n        \"created_at\": \"2025-06-10T14:39:14.109868Z\"\n    },\n    {\n        \"id\": \"0cd49adf-81da-4c66-85d6-6532c5305c36\",\n        \"title\": \"Thus card adult life.\",\n        \"description\": \"Hotel sign picture I. Skill follow push.\\nMoment sure must likely authority sit skill. Receive hospital yeah even bring start. Man into common security.\",\n        \"deadline\": \"2025-06-19T14:39:14.121377Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 5,\n        \"assigned_to_username\": \"jackie23\",\n        \"created_at\": \"2025-06-10T14:39:14.122061Z\"\n    },\n    {\n        \"id\": \"98bb2272-3c62-4d9f-b16f-ef9062c719d8\",\n        \"title\": \"That interview return source.\",\n        \"description\": \"Public inside share develop receive meet guess. Or study up phone. Improve commercial certainly their study skin.\\nSit guess interesting opportunity open sit choose. Successful free choice common.\",\n        \"deadline\": \"2025-06-13T14:39:14.133294Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 1,\n        \"assigned_to_username\": \"admin\",\n        \"created_at\": \"2025-06-10T14:39:14.134013Z\"\n    },\n    {\n        \"id\": \"d1da480a-e35d-48c2-b289-63d8b99adeaf\",\n        \"title\": \"Point parent us.\",\n        \"description\": \"None save may report court true report tax. Thought head house another.\\nRequire score wonder realize movie. Street provide develop nearly sell yes.\",\n        \"deadline\": \"2025-06-12T14:39:14.144233Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 6,\n        \"assigned_to_username\": \"riveraandre\",\n        \"created_at\": \"2025-06-10T14:39:14.144867Z\"\n    },\n    {\n        \"id\": \"c42e8bba-a179-4e39-be99-cc84cb8d5e65\",\n        \"title\": \"Magazine air bank including program.\",\n        \"description\": \"Run develop again everyone. Land film expert head pull example.\\nNatural focus language join local group. Main organization whether.\",\n        \"deadline\": \"2025-06-18T14:39:14.153604Z\",\n        \"status\": \"in_progress\",\n        \"assigned_to\": 15,\n        \"assigned_to_username\": \"rholmes\",\n        \"created_at\": \"2025-06-10T14:39:14.154305Z\"\n    },\n    {\n        \"id\": \"fd13d1cc-71ff-41de-940f-9007edd4a855\",\n        \"title\": \"Development discussion boy camera conference media.\",\n        \"description\": \"That scene million. Fund meet nature task hard. Authority increase bill they.\\nDrug art break across argue together always. About note size south.\",\n        \"deadline\": \"2025-06-17T14:39:14.164528Z\",\n        \"status\": \"pending\",\n        \"assigned_to\": 15,\n        \"assigned_to_username\": \"rholmes\",\n        \"created_at\": \"2025-06-10T14:39:14.165267Z\"\n    },\n    {\n        \"id\": \"adc54535-f385-4410-a5d5-9e1934684fae\",\n        \"title\": \"Explain police watch certain you story.\",\n        \"description\": \"Plan character friend where relationship your. Red part card raise manager professional herself.\",\n        \"deadline\": \"2025-06-11T14:39:14.174960Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 8,\n        \"assigned_to_username\": \"evelyn95\",\n        \"created_at\": \"2025-06-10T14:39:14.175689Z\"\n    },\n    {\n        \"id\": \"45d101ae-7a64-40b6-97c2-dba942075fc9\",\n        \"title\": \"Growth than run.\",\n        \"description\": \"Weight them store world under wall system again. Analysis happy walk career man type fall. Son poor sit age question.\",\n        \"deadline\": \"2025-06-09T14:39:14.184953Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 14,\n        \"assigned_to_username\": \"fletchertimothy\",\n        \"created_at\": \"2025-06-10T14:39:14.185571Z\"\n    },\n    {\n        \"id\": \"d7277718-a439-4929-a8c4-7c1bca2bb282\",\n        \"title\": \"Factor stay happen.\",\n        \"description\": \"Environment suggest step. Show military successful community cell wall.\\nTen glass need move up show.\\nHit break city push value there candidate. Art quite capital none letter.\",\n        \"deadline\": \"2025-06-17T14:39:14.194971Z\",\n        \"status\": \"pending\",\n        \"assigned_to\": 10,\n        \"assigned_to_username\": \"robertoliver\",\n        \"created_at\": \"2025-06-10T14:39:14.195525Z\"\n    },\n    {\n        \"id\": \"07558feb-4901-4772-9ee0-f9c5d619d191\",\n        \"title\": \"Your voice my.\",\n        \"description\": \"Tax popular information half television question. Appear record alone this short much Congress.\",\n        \"deadline\": \"2025-06-10T14:39:14.262479Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 1,\n        \"assigned_to_username\": \"admin\",\n        \"created_at\": \"2025-06-10T14:39:14.263018Z\"\n    },\n    {\n        \"id\": \"1c00ef84-4a73-4995-ad30-244abe0392f8\",\n        \"title\": \"Possible should those morning week local.\",\n        \"description\": \"Player easy power determine happen subject size. Author seek bed director foreign full. Easy most perhaps mind former.\",\n        \"deadline\": \"2025-06-10T14:39:14.300430Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 19,\n        \"assigned_to_username\": \"stephaniebeck\",\n        \"created_at\": \"2025-06-10T14:39:14.300985Z\"\n    },\n    {\n        \"id\": \"bafca0d2-3cd3-4e15-b523-df1932902e3e\",\n        \"title\": \"Stand finish stop task.\",\n        \"description\": \"Group language draw vote sure source task. Focus lay investment.\\nAge condition customer fast. Police old remain its however authority region.\",\n        \"deadline\": \"2025-06-06T14:39:14.319180Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 3,\n        \"assigned_to_username\": \"jessicaphillips\",\n        \"created_at\": \"2025-06-10T14:39:14.319741Z\"\n    },\n    {\n        \"id\": \"37a51096-b65b-4453-884c-3ed2175a7a7d\",\n        \"title\": \"Beautiful red support discussion coach prepare.\",\n        \"description\": \"What imagine of black government. Financial add medical. Card really grow candidate space their security defense.\\nReveal country social guess wide out home. Happen little land.\",\n        \"deadline\": \"2025-06-15T14:39:14.328650Z\",\n        \"status\": \"pending\",\n        \"assigned_to\": 21,\n        \"assigned_to_username\": \"carriemendoza\",\n        \"created_at\": \"2025-06-10T14:39:14.329508Z\"\n    },\n    {\n        \"id\": \"d528d952-9b4a-4ff0-8308-fb7acacd6e15\",\n        \"title\": \"Instead stuff program nice skin author.\",\n        \"description\": \"Suggest they war chance. Purpose international administration give hold.\\nCarry wish property commercial individual learn. Decide safe most. Some toward ready full tonight already political.\",\n        \"deadline\": \"2025-06-12T14:39:14.355648Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 16,\n        \"assigned_to_username\": \"kscott\",\n        \"created_at\": \"2025-06-10T14:39:14.356247Z\"\n    },\n    {\n        \"id\": \"3f47fb21-b3e7-4f7b-9c00-5b785ee64360\",\n        \"title\": \"Ahead news friend.\",\n        \"description\": \"House month prove free something audience car. Answer one sort conference operation cover.\",\n        \"deadline\": \"2025-06-13T14:39:14.366132Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 20,\n        \"assigned_to_username\": \"mhorne\",\n        \"created_at\": \"2025-06-10T14:39:14.366762Z\"\n    },\n    {\n        \"id\": \"ebfd6c45-15ec-44cd-a03d-8527109ba0bc\",\n        \"title\": \"Contain significant too indeed him.\",\n        \"description\": \"Throughout capital herself direction care.\\nOffer rest policy organization. Sense feeling prove mean right reduce.\",\n        \"deadline\": \"2025-06-11T14:39:14.376126Z\",\n        \"status\": \"in_progress\",\n        \"assigned_to\": 16,\n        \"assigned_to_username\": \"kscott\",\n        \"created_at\": \"2025-06-10T14:39:14.376677Z\"\n    },\n    {\n        \"id\": \"558c6ed4-4ca8-4851-9e02-1cc938e342a6\",\n        \"title\": \"Some structure mean already.\",\n        \"description\": \"Cup even five director one. Son same only news store crime collection he.\\nWorker movement stage rich key. Cell eye lay.\\nNational new may house. Not interest book around involve police pay.\",\n        \"deadline\": \"2025-06-13T14:39:14.386145Z\",\n        \"status\": \"in_progress\",\n        \"assigned_to\": 14,\n        \"assigned_to_username\": \"fletchertimothy\",\n        \"created_at\": \"2025-06-10T14:39:14.386880Z\"\n    },\n    {\n        \"id\": \"1f39bd5f-6d8c-427e-93f4-3f330cd32f84\",\n        \"title\": \"Name statement yet network.\",\n        \"description\": \"Pressure practice style control himself. Most whom strong health across eat.\\nEver nor artist shake size table result spring. Ground game shoulder. Marriage entire energy.\",\n        \"deadline\": \"2025-06-09T14:39:14.396146Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 1,\n        \"assigned_to_username\": \"admin\",\n        \"created_at\": \"2025-06-10T14:39:14.397113Z\"\n    },\n    {\n        \"id\": \"9a5ca61c-5dae-4aa8-b25a-e6dcfb4a32ff\",\n        \"title\": \"Stand side public page.\",\n        \"description\": \"Produce organization information physical cold continue sea.\\nHave listen however car several budget single blue.\",\n        \"deadline\": \"2025-06-13T14:39:14.406038Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 18,\n        \"assigned_to_username\": \"tony11\",\n        \"created_at\": \"2025-06-10T14:39:14.407015Z\"\n    },\n    {\n        \"id\": \"26a2b83d-f59a-4376-86f6-22577454d162\",\n        \"title\": \"Down national learn stage contain.\",\n        \"description\": \"Beyond appear try owner smile. Perform scientist enough open.\\nStay happy suddenly woman training. Mission choice still decade attention west determine.\",\n        \"deadline\": \"2025-06-10T14:39:14.417049Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 12,\n        \"assigned_to_username\": \"scotthaas\",\n        \"created_at\": \"2025-06-10T14:39:14.417692Z\"\n    },\n    {\n        \"id\": \"26f535f0-9554-476f-b16b-329d690bf8df\",\n        \"title\": \"Message push now.\",\n        \"description\": \"Campaign send local author final. Tough player job above. Worker black ever hope purpose more often.\\nMake camera base color peace onto. Scene either popular. Material notice nothing.\",\n        \"deadline\": \"2025-06-14T14:39:14.426827Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 18,\n        \"assigned_to_username\": \"tony11\",\n        \"created_at\": \"2025-06-10T14:39:14.427710Z\"\n    },\n    {\n        \"id\": \"c5e5fcbf-0844-4900-8fbe-db118c2bfb1e\",\n        \"title\": \"Conference discuss edge top bit such.\",\n        \"description\": \"Stay line minute behind personal. White buy born clear especially audience throw mention.\\nCommercial exist time. Happen style billion six serve. Daughter boy dinner between lot scientist.\",\n        \"deadline\": \"2025-06-13T14:39:14.437406Z\",\n        \"status\": \"missed\",\n        \"assigned_to\": 18,\n        \"assigned_to_username\": \"tony11\",\n        \"created_at\": \"2025-06-10T14:39:14.438068Z\"\n    },\n    {\n        \"id\": \"960e67e4-da06-4ea1-953e-8d5dcb8d0029\",\n        \"title\": \"Show stand big down clearly.\",\n        \"description\": \"Idea local nor order.\\nExist responsibility TV front. Make serious series center only play other may. School energy game like reach game thank once.\",\n        \"deadline\": \"2025-06-08T14:39:14.447564Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 7,\n        \"assigned_to_username\": \"kstephens\",\n        \"created_at\": \"2025-06-10T14:39:14.448646Z\"\n    },\n    {\n        \"id\": \"9ca4d274-1fb4-4960-82ea-7cb9b181b3f4\",\n        \"title\": \"It just turn quickly certainly firm.\",\n        \"description\": \"Business call point cold successful. Reach information sister control company yourself game collection. Store fill why price exist sure. Toward treatment method then close hold big.\",\n        \"deadline\": \"2025-06-17T14:39:14.457710Z\",\n        \"status\": \"completed\",\n        \"assigned_to\": 9,\n        \"assigned_to_username\": \"blakejeremy\",\n        \"created_at\": \"2025-06-10T14:39:14.458402Z\"\n    },\n    {\n        \"id\": \"46cc6509-1cc5-4a4d-b1bf-f4ede708e8e3\",\n        \"title\": \"Buy head with argue.\",\n        \"description\": \"Star blood she gun research thought. Relate as order statement.\\nListen hope lose large. Tell fish company throw.\",\n        \"deadline\": \"2025-06-12T14:39:14.504372Z\",\n        \"status\": \"pending\",\n        \"assigned_to\": 12,\n        \"assigned_to_username\": \"scotthaas\",\n        \"created_at\": \"2025-06-10T14:39:14.505060Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "assign task to user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTgzMzQ1LCJpYXQiOjE3NDk1ODMwNDUsImp0aSI6IjhmMjQxNDc2ZWNmYTRkMjE4ZDc2M2ZlOTZkZmNjMmYwIiwidXNlcl9pZCI6MjB9.TbzXWoVYT4ubucgId6kRUf-VX7Lc8_ePAFzs1wBOwUw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"title\": \"Testing\",\r\n        \"description\": \"test assessment\",\r\n        \"deadline\": \"2025-06-13T14:39:13.776576Z\",\r\n        \"assigned_to\": 13\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/task/tasks/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"task",
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "assign task",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"title\": \"Testing\",\r\n        \"description\": \"test assessment\",\r\n        \"deadline\": \"2025-06-13T14:39:13.776576Z\",\r\n        \"assigned_to\": 13\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/task/tasks/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"task",
+								"tasks",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 10 Jun 2025 19:18:02 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "253"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"c00fc072-279e-411a-bd0b-c504f7c5b74d\",\n    \"title\": \"Testing\",\n    \"description\": \"test assessment\",\n    \"deadline\": \"2025-06-13T14:39:13.776576Z\",\n    \"status\": \"pending\",\n    \"assigned_to\": 13,\n    \"assigned_to_username\": \"sharonvargas\",\n    \"created_at\": \"2025-06-10T19:18:02.822161Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update task status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTgzODA3LCJpYXQiOjE3NDk1ODM1MDcsImp0aSI6ImFmNWFjZjQ2YzVjMDRkZTg5ZjU4NWFhYjIyYTlmMTg0IiwidXNlcl9pZCI6MjB9.ORJlqtPce6L_I72eU4ghixsNjzYH85PEpeRTjLVF5d4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    //   \"status\": \"in_progress\"\r\n      \"status\": \"completed\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/task/tasks/c00fc072-279e-411a-bd0b-c504f7c5b74d/update_status/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"task",
+						"tasks",
+						"c00fc072-279e-411a-bd0b-c504f7c5b74d",
+						"update_status",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update task status",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    //   \"status\": \"in_progress\"\r\n      \"status\": \"completed\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/task/tasks/c00fc072-279e-411a-bd0b-c504f7c5b74d/update_status/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"task",
+								"tasks",
+								"c00fc072-279e-411a-bd0b-c504f7c5b74d",
+								"update_status",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 10 Jun 2025 19:25:47 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PATCH, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "255"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"c00fc072-279e-411a-bd0b-c504f7c5b74d\",\n    \"title\": \"Testing\",\n    \"description\": \"test assessment\",\n    \"deadline\": \"2025-06-13T14:39:13.776576Z\",\n    \"status\": \"completed\",\n    \"assigned_to\": 13,\n    \"assigned_to_username\": \"sharonvargas\",\n    \"created_at\": \"2025-06-10T19:18:02.822161Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get all users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTg0NjM1LCJpYXQiOjE3NDk1ODQzMzUsImp0aSI6ImEwYzEyNjJjN2FhODRmNDY4Mjg0MzBiNGEzYTlkYzUyIiwidXNlcl9pZCI6MTV9.Y5JCsCKyugREHVCo7uV8TOhR2Pa9WncbjlbfJXR5foY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    //   \"status\": \"in_progress\"\r\n      \"status\": \"completed\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/user/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"users",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    //   \"status\": \"in_progress\"\r\n      \"status\": \"completed\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"users",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 10 Jun 2025 19:45:42 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3167"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"admin\",\n        \"email\": \"\",\n        \"role\": {\n            \"id\": \"72dea7c9-c39d-402f-aafb-93cbe659da55\",\n            \"name\": \"admin\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 2,\n        \"username\": \"tschmidt\",\n        \"email\": \"dennissmith@example.org\",\n        \"role\": {\n            \"id\": \"cda53511-699b-40ca-9807-4a4a520011b8\",\n            \"name\": \"manager\"\n        },\n        \"is_active\": false\n    },\n    {\n        \"id\": 3,\n        \"username\": \"jessicaphillips\",\n        \"email\": \"elizabethsmith@example.com\",\n        \"role\": {\n            \"id\": \"cda53511-699b-40ca-9807-4a4a520011b8\",\n            \"name\": \"manager\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 4,\n        \"username\": \"stewartaaron\",\n        \"email\": \"olivia06@example.com\",\n        \"role\": {\n            \"id\": \"c9a42963-1f41-41cb-a4a3-d4c797c4323e\",\n            \"name\": \"user\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 5,\n        \"username\": \"jackie23\",\n        \"email\": \"brittanybarajas@example.net\",\n        \"role\": {\n            \"id\": \"72dea7c9-c39d-402f-aafb-93cbe659da55\",\n            \"name\": \"admin\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 6,\n        \"username\": \"riveraandre\",\n        \"email\": \"thomas29@example.net\",\n        \"role\": {\n            \"id\": \"cda53511-699b-40ca-9807-4a4a520011b8\",\n            \"name\": \"manager\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 7,\n        \"username\": \"kstephens\",\n        \"email\": \"jenniferbanks@example.org\",\n        \"role\": {\n            \"id\": \"c9a42963-1f41-41cb-a4a3-d4c797c4323e\",\n            \"name\": \"user\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 8,\n        \"username\": \"evelyn95\",\n        \"email\": \"patrick72@example.net\",\n        \"role\": {\n            \"id\": \"72dea7c9-c39d-402f-aafb-93cbe659da55\",\n            \"name\": \"admin\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 9,\n        \"username\": \"blakejeremy\",\n        \"email\": \"qlewis@example.net\",\n        \"role\": {\n            \"id\": \"cda53511-699b-40ca-9807-4a4a520011b8\",\n            \"name\": \"manager\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 10,\n        \"username\": \"robertoliver\",\n        \"email\": \"sanchezdavid@example.org\",\n        \"role\": {\n            \"id\": \"cda53511-699b-40ca-9807-4a4a520011b8\",\n            \"name\": \"manager\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 11,\n        \"username\": \"watsonmichael\",\n        \"email\": \"cummingsbrenda@example.net\",\n        \"role\": {\n            \"id\": \"cda53511-699b-40ca-9807-4a4a520011b8\",\n            \"name\": \"manager\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 12,\n        \"username\": \"scotthaas\",\n        \"email\": \"speterson@example.com\",\n        \"role\": {\n            \"id\": \"c9a42963-1f41-41cb-a4a3-d4c797c4323e\",\n            \"name\": \"user\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 13,\n        \"username\": \"sharonvargas\",\n        \"email\": \"christine14@example.org\",\n        \"role\": {\n            \"id\": \"72dea7c9-c39d-402f-aafb-93cbe659da55\",\n            \"name\": \"admin\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 14,\n        \"username\": \"fletchertimothy\",\n        \"email\": \"sean07@example.org\",\n        \"role\": {\n            \"id\": \"cda53511-699b-40ca-9807-4a4a520011b8\",\n            \"name\": \"manager\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 15,\n        \"username\": \"rholmes\",\n        \"email\": \"emilymcgee@example.org\",\n        \"role\": {\n            \"id\": \"c9a42963-1f41-41cb-a4a3-d4c797c4323e\",\n            \"name\": \"user\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 16,\n        \"username\": \"kscott\",\n        \"email\": \"ellisjohn@example.net\",\n        \"role\": {\n            \"id\": \"72dea7c9-c39d-402f-aafb-93cbe659da55\",\n            \"name\": \"admin\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 17,\n        \"username\": \"moorejames\",\n        \"email\": \"floresbrian@example.com\",\n        \"role\": {\n            \"id\": \"72dea7c9-c39d-402f-aafb-93cbe659da55\",\n            \"name\": \"admin\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 18,\n        \"username\": \"tony11\",\n        \"email\": \"kelly82@example.com\",\n        \"role\": {\n            \"id\": \"c9a42963-1f41-41cb-a4a3-d4c797c4323e\",\n            \"name\": \"user\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 19,\n        \"username\": \"stephaniebeck\",\n        \"email\": \"pkeller@example.org\",\n        \"role\": {\n            \"id\": \"c9a42963-1f41-41cb-a4a3-d4c797c4323e\",\n            \"name\": \"user\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 20,\n        \"username\": \"mhorne\",\n        \"email\": \"megan14@example.com\",\n        \"role\": {\n            \"id\": \"72dea7c9-c39d-402f-aafb-93cbe659da55\",\n            \"name\": \"admin\"\n        },\n        \"is_active\": true\n    },\n    {\n        \"id\": 21,\n        \"username\": \"carriemendoza\",\n        \"email\": \"wjohnson@example.com\",\n        \"role\": {\n            \"id\": \"cda53511-699b-40ca-9807-4a4a520011b8\",\n            \"name\": \"manager\"\n        },\n        \"is_active\": true\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "activate user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTg0ODE5LCJpYXQiOjE3NDk1ODQ1MTksImp0aSI6ImQ0OGNlZjliYTEwODQzY2NhZDhkMTFkNmMxNTU4NmVhIiwidXNlcl9pZCI6MjB9.S1Jt0P2nonhMw98Sctt-1RTdiYFto5jy374PUzfYFrk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    //   \"status\": \"in_progress\"\r\n      \"status\": \"completed\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/user/users/2/reactivate/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"users",
+						"2",
+						"reactivate",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "activate user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    //   \"status\": \"in_progress\"\r\n      \"status\": \"completed\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user/users/2/reactivate/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"users",
+								"2",
+								"reactivate",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 10 Jun 2025 19:45:48 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"User reactivated\"\n}"
+				}
+			]
+		}
+	]
+}
